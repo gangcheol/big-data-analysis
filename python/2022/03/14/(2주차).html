@@ -89,10 +89,107 @@ window.onload = wrap_img;
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
-      <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="Layout">
+    
+      <div class="Layout-sidebar border" id="toc">
+        <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#1주차-복습">1주차 복습 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#회귀계수-추정치">회귀계수 추정치 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#2주차-수업시작~~">2주차 수업시작~~ </a></li>
+<li class="toc-entry toc-h1"><a href="#tensorflow의-GPU-연결법">tensorflow의 GPU 연결법 </a></li>
+<li class="toc-entry toc-h1"><a href="#tf.constant">tf.constant </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#예비학습:-중첩리스트">예비학습: 중첩리스트 </a></li>
+<li class="toc-entry toc-h2"><a href="#변수-선언">변수 선언 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#스칼라">스칼라 </a></li>
+<li class="toc-entry toc-h3"><a href="#벡터">벡터 </a></li>
+<li class="toc-entry toc-h3"><a href="#매트릭스-생성">매트릭스 생성 </a></li>
+<li class="toc-entry toc-h3"><a href="#텐서-==-3차원-이상의-배열">텐서 == 3차원 이상의 배열 </a></li>
+<li class="toc-entry toc-h3"><a href="#타입">타입 </a></li>
+<li class="toc-entry toc-h3"><a href="#인덱싱">인덱싱 </a></li>
+<li class="toc-entry toc-h3"><a href="#tf.constant는-불편하다.">tf.constant는 불편하다. </a></li>
+<li class="toc-entry toc-h3"><a href="#tf.constant-$\to$-넘파이">tf.constant $\to$ 넘파이 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#연산">연산 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#더하기">더하기 </a></li>
+<li class="toc-entry toc-h3"><a href="#곱하기">곱하기 </a></li>
+<li class="toc-entry toc-h3"><a href="#역행렬">역행렬 </a></li>
+<li class="toc-entry toc-h3"><a href="#determinant">determinant </a></li>
+<li class="toc-entry toc-h3"><a href="#Trace">Trace </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#형태변환">형태변환 </a></li>
+<li class="toc-entry toc-h2"><a href="#선언고급">선언고급 </a></li>
+<li class="toc-entry toc-h2"><a href="#tf.concat">tf.concat </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#차원-수-증가">차원 수 증가 </a></li>
+<li class="toc-entry toc-h3"><a href="#차원을-한번-줄여보자">차원을 한번 줄여보자 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#tf.stack">tf.stack </a></li>
+<li class="toc-entry toc-h2"><a href="#tf.einsum">tf.einsum </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#tnp">tnp </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#tnp-사용방법-(불만해결방법)">tnp 사용방법 (불만해결방법) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#선언,-선언고급">선언, 선언고급 </a></li>
+<li class="toc-entry toc-h3"><a href="#타입">타입 </a></li>
+<li class="toc-entry toc-h3"><a href="#tf.contant로-만들어도-마치-넘파이인듯-쓰는-기능들">tf.contant로 만들어도 마치 넘파이인듯 쓰는 기능들 </a></li>
+<li class="toc-entry toc-h3"><a href="#그렇지만-np.array는-아님">그렇지만 np.array는 아님 </a></li>
+<li class="toc-entry toc-h3"><a href="#tf.Variable">tf.Variable </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#선언">선언 </a></li>
+<li class="toc-entry toc-h4"><a href="#타입">타입 </a></li>
+<li class="toc-entry toc-h4"><a href="#인덱싱">인덱싱 </a></li>
+<li class="toc-entry toc-h4"><a href="#tf.Variable-$\to$-넘파이">tf.Variable $\to$ 넘파이 </a></li>
+<li class="toc-entry toc-h4"><a href="#tf.Variable-도-불편하다.">tf.Variable 도 불편하다. </a></li>
+<li class="toc-entry toc-h4"><a href="#연산">연산 </a></li>
+<li class="toc-entry toc-h4"><a href="#형태변환">형태변환 </a></li>
+<li class="toc-entry toc-h4"><a href="#선언고급">선언고급 </a></li>
+<li class="toc-entry toc-h4"><a href="#tf.concat">tf.concat </a></li>
+<li class="toc-entry toc-h4"><a href="#tf.stack">tf.stack </a></li>
+<li class="toc-entry toc-h4"><a href="#심지어-tf.Variable()로-만들어진-오브젝트는-tnp의-효과(은총)도-받지-못함">심지어 tf.Variable()로 만들어진 오브젝트는 tnp의 효과(은총)도 받지 못함 </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+      </div>
+    <article class="Layout-main post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  
+    
+      <div class="pb-5 d-flex flex-wrap flex-justify-end">
+        <div class="px-2">
 
-  <header class="post-header">
+    <a href="https://github.com/gangcheol/big-data-analysis/tree/master/_notebooks/2022-03-14-(2주차).ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/big-data-analysis/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+        <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/gangcheol/big-data-analysis/master?filepath=_notebooks%2F2022-03-14-%282%EC%A3%BC%EC%B0%A8%29.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/big-data-analysis/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+        <div class="px-2">
+    <a href="https://colab.research.google.com/github/gangcheol/big-data-analysis/blob/master/_notebooks/2022-03-14-(2주차).ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/big-data-analysis/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+      </div>
+    <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">(2주차) Tensorflow</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-14T00:00:00-05:00" itemprop="datePublished">
         Mar 14, 2022
       </time>• 
@@ -104,45 +201,15 @@ window.onload = wrap_img;
       17 min read
     
 </span></p>
-
     
-      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i>
       
         <a class="category-tags-link" href="/big-data-analysis/categories/#python">python</a>
         
       
       </p>
     
-
-    
-      
-        <div class="pb-5 d-flex flex-justify-center">
-          <div class="px-2">
-
-    <a href="https://github.com/gangcheol/big-data-analysis/tree/master/_notebooks/2022-03-14-(2주차).ipynb" role="button" target="_blank">
-<img class="notebook-badge-image" src="/big-data-analysis/assets/badges/github.svg" alt="View On GitHub">
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/gangcheol/big-data-analysis/master?filepath=_notebooks%2F2022-03-14-%282%EC%A3%BC%EC%B0%A8%29.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/big-data-analysis/assets/badges/binder.svg" alt="Open In Binder"/>
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://colab.research.google.com/github/gangcheol/big-data-analysis/blob/master/_notebooks/2022-03-14-(2주차).ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/big-data-analysis/assets/badges/colab.svg" alt="Open In Colab"/>
-    </a>
-</div>
-          <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fgangcheol%2Fbig-data-analysis%2Fblob%2Fmaster%2F_notebooks%2F2022-03-14-%282%EC%A3%BC%EC%B0%A8%29.ipynb" target="_blank">
-      <img class="notebook-badge-image" src="/big-data-analysis/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
-  </a>
-</div>
-
-        </div>
-      </header>
+  </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
@@ -4253,6 +4320,3837 @@ array([[1],
 
 
 
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-03-14-(2주차).ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="1&#51452;&#52264;-&#48373;&#49845;">1&#51452;&#52264; &#48373;&#49845;<a class="anchor-link" href="#1&#51452;&#52264;-&#48373;&#49845;"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#54924;&#44480;&#44228;&#49688;-&#52628;&#51221;&#52824;">&#54924;&#44480;&#44228;&#49688; &#52628;&#51221;&#52824;<a class="anchor-link" href="#&#54924;&#44480;&#44228;&#49688;-&#52628;&#51221;&#52824;"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>단순선형회귀의 경우 일반적인 베타계수의 추정치 </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\hat {\beta_0} = \bar y - \beta _1\bar x, \quad \hat {\beta_1} = \frac {S_{xy}} {S_{xx}}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>다중 회귀의 경우</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$L=loss =({\bf y}-{\bf X}{\boldsymbol \beta})^\top({\bf y}-{\bf X}{\boldsymbol \beta})$$<p></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>
+$$ L= {\bf y}^\top {\bf y} - {\bf y}^\top {\bf X}{\boldsymbol\beta} - {\boldsymbol\beta}^\top {\bf X}^\top {\bf y} + {\boldsymbol\beta}^\top {\bf X}^\top {\bf X} {\boldsymbol\beta}$$
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위를 미분하면</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>
+$$\frac{\partial}{\partial \boldsymbol{\beta}} L = \frac{\partial}{\partial \boldsymbol{\beta}} {\bf y}^\top {\bf y} - \frac{\partial}{\partial \boldsymbol{\beta}} {\bf y}^\top {\bf X}{\boldsymbol\beta} - \frac{\partial}{\partial \boldsymbol{\beta}} {\boldsymbol\beta}^\top {\bf X}^\top {\bf y} + \frac{\partial}{\partial \boldsymbol{\beta}} {\boldsymbol\beta}^\top {\bf X}^\top {\bf X} {\boldsymbol\beta}  $$
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\frac{\partial}{\partial \boldsymbol{\beta}} L=- \mathbf{X^{\top}y} - \mathbf{X^{\top}y} + 2\mathbf{X^{\top}X\boldsymbol \beta}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>따라서</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$\quad \bf{X^{\top}X}\beta
+ = \bf{X^{\top}Y}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>
+$$\therefore \quad \hat {\beta} = \left(\bf{X^{\top}X}^{-1}\right)XY$$
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2&#51452;&#52264;-&#49688;&#50629;&#49884;&#51089;~~">2&#51452;&#52264; &#49688;&#50629;&#49884;&#51089;~~<a class="anchor-link" href="#2&#51452;&#52264;-&#49688;&#50629;&#49884;&#51089;~~"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="tensorflow&#51032;-GPU-&#50672;&#44208;&#48277;">tensorflow&#51032; GPU &#50672;&#44208;&#48277;<a class="anchor-link" href="#tensorflow&#51032;-GPU-&#50672;&#44208;&#48277;"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[PhysicalDevice(name=&#39;/physical_device:GPU:0&#39;, device_type=&#39;GPU&#39;)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="tf.constant">tf.constant<a class="anchor-link" href="#tf.constant"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#50696;&#48708;&#54617;&#49845;:-&#51473;&#52393;&#47532;&#49828;&#53944;">&#50696;&#48708;&#54617;&#49845;: &#51473;&#52393;&#47532;&#49828;&#53944;<a class="anchor-link" href="#&#50696;&#48708;&#54617;&#49845;:-&#51473;&#52393;&#47532;&#49828;&#53944;"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 리스트</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">lst</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1, 2, 3, 4, 5]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lst</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 리스트 안에 리스트 생성</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lst</span> <span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">lst</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[1, 2], [3, 4]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 위 같은 2차원의 리스트 구조를 행렬로 생각할 수 있다</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1  2 \
+3  4</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>또는</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1  \
+2  \
+3  \
+4</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code>  (4,1) 행렬 느낌의 리스트</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">lst</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[1], [2], [3], [4]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1],
+       [2],
+       [3],
+       [4]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> (1,4) 행렬 느낌의 리스트</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">lst</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 2, 3, 4])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#48320;&#49688;-&#49440;&#50616;">&#48320;&#49688; &#49440;&#50616;<a class="anchor-link" href="#&#48320;&#49688;-&#49440;&#50616;"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#49828;&#52860;&#46972;">&#49828;&#52860;&#46972;<a class="anchor-link" href="#&#49828;&#52860;&#46972;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(), dtype=float32, numpy=3.14&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span> <span class="o">+</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(), dtype=float32, numpy=6.28&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#48289;&#53552;">&#48289;&#53552;<a class="anchor-link" href="#&#48289;&#53552;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_vector</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span> <span class="p">])</span>
+<span class="n">_vector</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(3,), dtype=int32, numpy=array([1, 2, 3], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(), dtype=int32, numpy=1&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#47588;&#53944;&#47533;&#49828;-&#49373;&#49457;">&#47588;&#53944;&#47533;&#49828; &#49373;&#49457;<a class="anchor-link" href="#&#47588;&#53944;&#47533;&#49828;-&#49373;&#49457;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_matrix</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">_matrix</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[1, 0],
+       [0, 1]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#53584;&#49436;-==-3&#52264;&#50896;-&#51060;&#49345;&#51032;-&#48176;&#50676;">&#53584;&#49436; == 3&#52264;&#50896; &#51060;&#49345;&#51032; &#48176;&#50676;<a class="anchor-link" href="#&#53584;&#49436;-==-3&#52264;&#50896;-&#51060;&#49345;&#51032;-&#48176;&#50676;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[[0, 1],
+        [1, 2]],
+
+       [[0, 1],
+        [1, 2]]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2, 2), dtype=int32, numpy=
+array([[[0, 1],
+        [1, 2]],
+
+       [[0, 1],
+        [1, 2]]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#53440;&#51077;">&#53440;&#51077;<a class="anchor-link" href="#&#53440;&#51077;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensorflow.python.framework.ops.EagerTensor</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 끝에 <code>EagerTensor</code> 가 나오는 것을 기억하자</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51064;&#45937;&#49905;">&#51064;&#45937;&#49905;<a class="anchor-link" href="#&#51064;&#45937;&#49905;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_matrix</span>  <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">_matrix</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[1, 2],
+       [3, 4]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2,), dtype=int32, numpy=array([1, 2], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2,), dtype=int32, numpy=array([1, 2], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(), dtype=int32, numpy=1&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(), dtype=int32, numpy=1&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="tf.constant&#45716;-&#48520;&#54200;&#54616;&#45796;.">tf.constant&#45716; &#48520;&#54200;&#54616;&#45796;.<a class="anchor-link" href="#tf.constant&#45716;-&#48520;&#54200;&#54616;&#45796;."> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 각 컬럼의 데이터 타입이 전부 동일하여야 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 원소 수정이 불가능함.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> <span class="n">a</span><span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">33</span><span class="p">])</span>
+ <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(3,), dtype=int32, numpy=array([ 1, 22, 33], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span><span class="mi">11</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-47-cf0e5bd1fc84&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>a<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">11</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;tensorflow.python.framework.ops.EagerTensor&#39; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 묵시적(간접적) 형변환이 불가능하다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mf">3.14</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4.140000000000001</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">InvalidArgumentError</span>                      Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-54-51b23ac3bfb0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>tf<span class="ansi-blue-fg">.</span>constant<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">+</span> tf<span class="ansi-blue-fg">.</span>constant<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3.14</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/util/traceback_utils.py</span> in <span class="ansi-cyan-fg">error_handler</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    151</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    152</span>       filtered_tb <span class="ansi-blue-fg">=</span> _process_traceback_frames<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>__traceback__<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 153</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">raise</span> e<span class="ansi-blue-fg">.</span>with_traceback<span class="ansi-blue-fg">(</span>filtered_tb<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    154</span>     <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    155</span>       <span class="ansi-green-fg">del</span> filtered_tb
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/ops.py</span> in <span class="ansi-cyan-fg">raise_from_not_ok_status</span><span class="ansi-blue-fg">(e, name)</span>
+<span class="ansi-green-intense-fg ansi-bold">   7184</span> <span class="ansi-green-fg">def</span> raise_from_not_ok_status<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   7185</span>   e<span class="ansi-blue-fg">.</span>message <span class="ansi-blue-fg">+=</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34; name: &#34;</span> <span class="ansi-blue-fg">+</span> name <span class="ansi-green-fg">if</span> name <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">&#34;&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 7186</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">raise</span> core<span class="ansi-blue-fg">.</span>_status_to_exception<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>  <span class="ansi-red-fg"># pylint: disable=protected-access</span>
+<span class="ansi-green-intense-fg ansi-bold">   7187</span> 
+<span class="ansi-green-intense-fg ansi-bold">   7188</span> 
+
+<span class="ansi-red-fg">InvalidArgumentError</span>: cannot compute AddV2 as input #1(zero-based) was expected to be a int32 tensor but is a float tensor [Op:AddV2]</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 같은 float 도 안되는 경우가 있음</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">InvalidArgumentError</span>                      Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-57-4390fbcde8ad&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>tf<span class="ansi-blue-fg">.</span>constant<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1.0</span><span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span> tf<span class="ansi-blue-fg">.</span>float64<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">+</span> tf<span class="ansi-blue-fg">.</span>constant<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3.14</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/util/traceback_utils.py</span> in <span class="ansi-cyan-fg">error_handler</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    151</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    152</span>       filtered_tb <span class="ansi-blue-fg">=</span> _process_traceback_frames<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>__traceback__<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 153</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">raise</span> e<span class="ansi-blue-fg">.</span>with_traceback<span class="ansi-blue-fg">(</span>filtered_tb<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    154</span>     <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    155</span>       <span class="ansi-green-fg">del</span> filtered_tb
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/ops.py</span> in <span class="ansi-cyan-fg">raise_from_not_ok_status</span><span class="ansi-blue-fg">(e, name)</span>
+<span class="ansi-green-intense-fg ansi-bold">   7184</span> <span class="ansi-green-fg">def</span> raise_from_not_ok_status<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   7185</span>   e<span class="ansi-blue-fg">.</span>message <span class="ansi-blue-fg">+=</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34; name: &#34;</span> <span class="ansi-blue-fg">+</span> name <span class="ansi-green-fg">if</span> name <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">&#34;&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 7186</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">raise</span> core<span class="ansi-blue-fg">.</span>_status_to_exception<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>  <span class="ansi-red-fg"># pylint: disable=protected-access</span>
+<span class="ansi-green-intense-fg ansi-bold">   7187</span> 
+<span class="ansi-green-intense-fg ansi-bold">   7188</span> 
+
+<span class="ansi-red-fg">InvalidArgumentError</span>: cannot compute AddV2 as input #1(zero-based) was expected to be a double tensor but is a float tensor [Op:AddV2]</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="tf.constant-$\to$-&#45336;&#54028;&#51060;">tf.constant $\to$ &#45336;&#54028;&#51060;<a class="anchor-link" href="#tf.constant-$\to$-&#45336;&#54028;&#51060;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array(1, dtype=int32)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensorflow.python.framework.ops.EagerTensor</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3.14</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#50672;&#49328;">&#50672;&#49328;<a class="anchor-link" href="#&#50672;&#49328;"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#45908;&#54616;&#44592;">&#45908;&#54616;&#44592;<a class="anchor-link" href="#&#45908;&#54616;&#44592;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2,), dtype=int32, numpy=array([4, 6], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c1">## 이건 예전버전 </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2,), dtype=int32, numpy=array([4, 6], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44273;&#54616;&#44592;">&#44273;&#54616;&#44592;<a class="anchor-link" href="#&#44273;&#54616;&#44592;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 결과가 조금 이상하다. 일반적인 행렬연사이 아니다</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+<span class="n">a</span><span class="o">*</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[ 5, 12],
+       [21, 32]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> but matrix의 곱은</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">5</span><span class="p">],[</span><span class="mi">7</span><span class="p">]])</span>
+<span class="n">a</span><span class="nd">@b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 1), dtype=int32, numpy=
+array([[5],
+       [7]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c1">## 위와 같은 표현</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50669;&#54665;&#47148;">&#50669;&#54665;&#47148;<a class="anchor-link" href="#&#50669;&#54665;&#47148;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[1, 0],
+       [0, 2]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">InvalidArgumentError</span>                      Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-70-fd9ade66c025&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>tf<span class="ansi-blue-fg">.</span>linalg<span class="ansi-blue-fg">.</span>inv<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/ops/gen_linalg_ops.py</span> in <span class="ansi-cyan-fg">matrix_inverse</span><span class="ansi-blue-fg">(input, adjoint, name)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1504</span>       <span class="ansi-green-fg">return</span> _result
+<span class="ansi-green-intense-fg ansi-bold">   1505</span>     <span class="ansi-green-fg">except</span> _core<span class="ansi-blue-fg">.</span>_NotOkStatusException <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1506</span><span class="ansi-red-fg">       </span>_ops<span class="ansi-blue-fg">.</span>raise_from_not_ok_status<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1507</span>     <span class="ansi-green-fg">except</span> _core<span class="ansi-blue-fg">.</span>_FallbackException<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1508</span>       <span class="ansi-green-fg">pass</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/ops.py</span> in <span class="ansi-cyan-fg">raise_from_not_ok_status</span><span class="ansi-blue-fg">(e, name)</span>
+<span class="ansi-green-intense-fg ansi-bold">   7184</span> <span class="ansi-green-fg">def</span> raise_from_not_ok_status<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   7185</span>   e<span class="ansi-blue-fg">.</span>message <span class="ansi-blue-fg">+=</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34; name: &#34;</span> <span class="ansi-blue-fg">+</span> name <span class="ansi-green-fg">if</span> name <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">&#34;&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 7186</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">raise</span> core<span class="ansi-blue-fg">.</span>_status_to_exception<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>  <span class="ansi-red-fg"># pylint: disable=protected-access</span>
+<span class="ansi-green-intense-fg ansi-bold">   7187</span> 
+<span class="ansi-green-intense-fg ansi-bold">   7188</span> 
+
+<span class="ansi-red-fg">InvalidArgumentError</span>: Value for attr &#39;T&#39; of int32 is not in the list of allowed values: double, float, half, complex64, complex128
+	; NodeDef: {{node MatrixInverse}}; Op&lt;name=MatrixInverse; signature=input:T -&gt; output:T; attr=adjoint:bool,default=false; attr=T:type,allowed=[DT_DOUBLE, DT_FLOAT, DT_HALF, DT_COMPLEX64, DT_COMPLEX128]&gt; [Op:MatrixInverse]</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위의 경우는 자료가 int 형이여서 안되는 거임 </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">?</span>tf.constant
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>아래오 같이 자료형을 선언해 주어야함 </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=float32, numpy=
+array([[1. , 0. ],
+       [0. , 0.5]], dtype=float32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="determinant">determinant<a class="anchor-link" href="#determinant"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>tf.Tensor(
+[[1. 2.]
+ [3. 4.]], shape=(2, 2), dtype=float32)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(), dtype=float32, numpy=-2.0&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Trace">Trace<a class="anchor-link" href="#Trace"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(), dtype=float32, numpy=5.0&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#54805;&#53468;&#48320;&#54872;">&#54805;&#53468;&#48320;&#54872;<a class="anchor-link" href="#&#54805;&#53468;&#48320;&#54872;"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 1 x 4 행렬을 $\to$  4 x 1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4,), dtype=int32, numpy=array([1, 2, 3, 4], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[1, 2],
+       [3, 4]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 3차원으로도 변경이 가능</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2, 1), dtype=int32, numpy=
+array([[[1],
+        [2]],
+
+       [[3],
+        [4]]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 다차원의 경우 적용</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)))</span>
+<span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(12,), dtype=int32, numpy=array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2, 3), dtype=int32, numpy=
+array([[[ 1,  2,  3],
+        [ 4,  5,  6]],
+
+       [[ 7,  8,  9],
+        [10, 11, 12]]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4, 3), dtype=int32, numpy=
+array([[ 1,  2,  3],
+       [ 4,  5,  6],
+       [ 7,  8,  9],
+       [10, 11, 12]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>-1</code> 을 기입하면 남은 차원 수를 알아서 기입해줌 <code>-1</code> = <code>?</code> 라고 생각</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4, 3), dtype=int32, numpy=
+array([[ 1,  2,  3],
+       [ 4,  5,  6],
+       [ 7,  8,  9],
+       [10, 11, 12]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2, 3), dtype=int32, numpy=
+array([[[ 1,  2,  3],
+        [ 4,  5,  6]],
+
+       [[ 7,  8,  9],
+        [10, 11, 12]]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 다시 일차원으로 되돌림</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(12,), dtype=int32, numpy=array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#49440;&#50616;&#44256;&#44553;">&#49440;&#50616;&#44256;&#44553;<a class="anchor-link" href="#&#49440;&#50616;&#44256;&#44553;"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 리스트나, 넘파이로 만들고 output을 tensor로 변경하는 것도 좋은 방법이다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ㅣ</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">ㅣ</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4, 4), dtype=int64, numpy=
+array([[1, 0, 0, 0],
+       [0, 2, 0, 0],
+       [0, 0, 3, 0],
+       [0, 0, 0, 4]])&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> tf.ones, tf.zeros</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(3, 3), dtype=float32, numpy=
+array([[0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]], dtype=float32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> tf.linspace(0,1,10)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(10,), dtype=float64, numpy=
+array([0.        , 0.11111111, 0.22222222, 0.33333333, 0.44444444,
+       0.55555556, 0.66666667, 0.77777778, 0.88888889, 1.        ])&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="tf.concat">tf.concat<a class="anchor-link" href="#tf.concat"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&lt;tf.Tensor: shape=(2,), dtype=int32, numpy=array([1, 2], dtype=int32)&gt;,
+ &lt;tf.Tensor: shape=(2,), dtype=int32, numpy=array([3, 4], dtype=int32)&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&lt;tf.Tensor: shape=(2, 1), dtype=int32, numpy=
+ array([[1],
+        [2]], dtype=int32)&gt;, &lt;tf.Tensor: shape=(2, 1), dtype=int32, numpy=
+ array([[3],
+        [4]], dtype=int32)&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4, 1), dtype=int32, numpy=
+array([[1],
+       [2],
+       [3],
+       [4]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&lt;tf.Tensor: shape=(2, 1), dtype=int32, numpy=
+ array([[1],
+        [2]], dtype=int32)&gt;, &lt;tf.Tensor: shape=(2, 1), dtype=int32, numpy=
+ array([[3],
+        [4]], dtype=int32)&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[1, 3],
+       [2, 4]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+
+<span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4,), dtype=int32, numpy=array([1, 2, 3, 4], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+
+<span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[1, 2],
+       [3, 4]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#52264;&#50896;-&#49688;-&#51613;&#44032;">&#52264;&#50896; &#49688; &#51613;&#44032;<a class="anchor-link" href="#&#52264;&#50896;-&#49688;-&#51613;&#44032;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(2,3,4,5)</code> concat <code>(2,3,4,5)</code> =&gt; <code>(4,3,4,5)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">120</span><span class="p">)),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">b</span><span class="o">=</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4, 3, 4, 5), dtype=int32, numpy=
+array([[[[   0,    1,    2,    3,    4],
+         [   5,    6,    7,    8,    9],
+         [  10,   11,   12,   13,   14],
+         [  15,   16,   17,   18,   19]],
+
+        [[  20,   21,   22,   23,   24],
+         [  25,   26,   27,   28,   29],
+         [  30,   31,   32,   33,   34],
+         [  35,   36,   37,   38,   39]],
+
+        [[  40,   41,   42,   43,   44],
+         [  45,   46,   47,   48,   49],
+         [  50,   51,   52,   53,   54],
+         [  55,   56,   57,   58,   59]]],
+
+
+       [[[  60,   61,   62,   63,   64],
+         [  65,   66,   67,   68,   69],
+         [  70,   71,   72,   73,   74],
+         [  75,   76,   77,   78,   79]],
+
+        [[  80,   81,   82,   83,   84],
+         [  85,   86,   87,   88,   89],
+         [  90,   91,   92,   93,   94],
+         [  95,   96,   97,   98,   99]],
+
+        [[ 100,  101,  102,  103,  104],
+         [ 105,  106,  107,  108,  109],
+         [ 110,  111,  112,  113,  114],
+         [ 115,  116,  117,  118,  119]]],
+
+
+       [[[   0,   -1,   -2,   -3,   -4],
+         [  -5,   -6,   -7,   -8,   -9],
+         [ -10,  -11,  -12,  -13,  -14],
+         [ -15,  -16,  -17,  -18,  -19]],
+
+        [[ -20,  -21,  -22,  -23,  -24],
+         [ -25,  -26,  -27,  -28,  -29],
+         [ -30,  -31,  -32,  -33,  -34],
+         [ -35,  -36,  -37,  -38,  -39]],
+
+        [[ -40,  -41,  -42,  -43,  -44],
+         [ -45,  -46,  -47,  -48,  -49],
+         [ -50,  -51,  -52,  -53,  -54],
+         [ -55,  -56,  -57,  -58,  -59]]],
+
+
+       [[[ -60,  -61,  -62,  -63,  -64],
+         [ -65,  -66,  -67,  -68,  -69],
+         [ -70,  -71,  -72,  -73,  -74],
+         [ -75,  -76,  -77,  -78,  -79]],
+
+        [[ -80,  -81,  -82,  -83,  -84],
+         [ -85,  -86,  -87,  -88,  -89],
+         [ -90,  -91,  -92,  -93,  -94],
+         [ -95,  -96,  -97,  -98,  -99]],
+
+        [[-100, -101, -102, -103, -104],
+         [-105, -106, -107, -108, -109],
+         [-110, -111, -112, -113, -114],
+         [-115, -116, -117, -118, -119]]]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(2,3,4,5)</code> concat <code>(2,3,4,5)</code> =&gt; <code>(2,6,4,5)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 6, 4, 5), dtype=int32, numpy=
+array([[[[   0,    1,    2,    3,    4],
+         [   5,    6,    7,    8,    9],
+         [  10,   11,   12,   13,   14],
+         [  15,   16,   17,   18,   19]],
+
+        [[  20,   21,   22,   23,   24],
+         [  25,   26,   27,   28,   29],
+         [  30,   31,   32,   33,   34],
+         [  35,   36,   37,   38,   39]],
+
+        [[  40,   41,   42,   43,   44],
+         [  45,   46,   47,   48,   49],
+         [  50,   51,   52,   53,   54],
+         [  55,   56,   57,   58,   59]],
+
+        [[   0,   -1,   -2,   -3,   -4],
+         [  -5,   -6,   -7,   -8,   -9],
+         [ -10,  -11,  -12,  -13,  -14],
+         [ -15,  -16,  -17,  -18,  -19]],
+
+        [[ -20,  -21,  -22,  -23,  -24],
+         [ -25,  -26,  -27,  -28,  -29],
+         [ -30,  -31,  -32,  -33,  -34],
+         [ -35,  -36,  -37,  -38,  -39]],
+
+        [[ -40,  -41,  -42,  -43,  -44],
+         [ -45,  -46,  -47,  -48,  -49],
+         [ -50,  -51,  -52,  -53,  -54],
+         [ -55,  -56,  -57,  -58,  -59]]],
+
+
+       [[[  60,   61,   62,   63,   64],
+         [  65,   66,   67,   68,   69],
+         [  70,   71,   72,   73,   74],
+         [  75,   76,   77,   78,   79]],
+
+        [[  80,   81,   82,   83,   84],
+         [  85,   86,   87,   88,   89],
+         [  90,   91,   92,   93,   94],
+         [  95,   96,   97,   98,   99]],
+
+        [[ 100,  101,  102,  103,  104],
+         [ 105,  106,  107,  108,  109],
+         [ 110,  111,  112,  113,  114],
+         [ 115,  116,  117,  118,  119]],
+
+        [[ -60,  -61,  -62,  -63,  -64],
+         [ -65,  -66,  -67,  -68,  -69],
+         [ -70,  -71,  -72,  -73,  -74],
+         [ -75,  -76,  -77,  -78,  -79]],
+
+        [[ -80,  -81,  -82,  -83,  -84],
+         [ -85,  -86,  -87,  -88,  -89],
+         [ -90,  -91,  -92,  -93,  -94],
+         [ -95,  -96,  -97,  -98,  -99]],
+
+        [[-100, -101, -102, -103, -104],
+         [-105, -106, -107, -108, -109],
+         [-110, -111, -112, -113, -114],
+         [-115, -116, -117, -118, -119]]]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(2,3,4,5)</code> concat <code>(2,3,4,5)</code> =&gt; <code>(2,3,8,5)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 3, 8, 5), dtype=int32, numpy=
+array([[[[   0,    1,    2,    3,    4],
+         [   5,    6,    7,    8,    9],
+         [  10,   11,   12,   13,   14],
+         [  15,   16,   17,   18,   19],
+         [   0,   -1,   -2,   -3,   -4],
+         [  -5,   -6,   -7,   -8,   -9],
+         [ -10,  -11,  -12,  -13,  -14],
+         [ -15,  -16,  -17,  -18,  -19]],
+
+        [[  20,   21,   22,   23,   24],
+         [  25,   26,   27,   28,   29],
+         [  30,   31,   32,   33,   34],
+         [  35,   36,   37,   38,   39],
+         [ -20,  -21,  -22,  -23,  -24],
+         [ -25,  -26,  -27,  -28,  -29],
+         [ -30,  -31,  -32,  -33,  -34],
+         [ -35,  -36,  -37,  -38,  -39]],
+
+        [[  40,   41,   42,   43,   44],
+         [  45,   46,   47,   48,   49],
+         [  50,   51,   52,   53,   54],
+         [  55,   56,   57,   58,   59],
+         [ -40,  -41,  -42,  -43,  -44],
+         [ -45,  -46,  -47,  -48,  -49],
+         [ -50,  -51,  -52,  -53,  -54],
+         [ -55,  -56,  -57,  -58,  -59]]],
+
+
+       [[[  60,   61,   62,   63,   64],
+         [  65,   66,   67,   68,   69],
+         [  70,   71,   72,   73,   74],
+         [  75,   76,   77,   78,   79],
+         [ -60,  -61,  -62,  -63,  -64],
+         [ -65,  -66,  -67,  -68,  -69],
+         [ -70,  -71,  -72,  -73,  -74],
+         [ -75,  -76,  -77,  -78,  -79]],
+
+        [[  80,   81,   82,   83,   84],
+         [  85,   86,   87,   88,   89],
+         [  90,   91,   92,   93,   94],
+         [  95,   96,   97,   98,   99],
+         [ -80,  -81,  -82,  -83,  -84],
+         [ -85,  -86,  -87,  -88,  -89],
+         [ -90,  -91,  -92,  -93,  -94],
+         [ -95,  -96,  -97,  -98,  -99]],
+
+        [[ 100,  101,  102,  103,  104],
+         [ 105,  106,  107,  108,  109],
+         [ 110,  111,  112,  113,  114],
+         [ 115,  116,  117,  118,  119],
+         [-100, -101, -102, -103, -104],
+         [-105, -106, -107, -108, -109],
+         [-110, -111, -112, -113, -114],
+         [-115, -116, -117, -118, -119]]]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(2,3,4,5)</code> concat <code>(2,3,4,5)</code> =&gt; <code>(2,3,4,10)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 3, 4, 10), dtype=int32, numpy=
+array([[[[   0,    1,    2,    3,    4,    0,   -1,   -2,   -3,   -4],
+         [   5,    6,    7,    8,    9,   -5,   -6,   -7,   -8,   -9],
+         [  10,   11,   12,   13,   14,  -10,  -11,  -12,  -13,  -14],
+         [  15,   16,   17,   18,   19,  -15,  -16,  -17,  -18,  -19]],
+
+        [[  20,   21,   22,   23,   24,  -20,  -21,  -22,  -23,  -24],
+         [  25,   26,   27,   28,   29,  -25,  -26,  -27,  -28,  -29],
+         [  30,   31,   32,   33,   34,  -30,  -31,  -32,  -33,  -34],
+         [  35,   36,   37,   38,   39,  -35,  -36,  -37,  -38,  -39]],
+
+        [[  40,   41,   42,   43,   44,  -40,  -41,  -42,  -43,  -44],
+         [  45,   46,   47,   48,   49,  -45,  -46,  -47,  -48,  -49],
+         [  50,   51,   52,   53,   54,  -50,  -51,  -52,  -53,  -54],
+         [  55,   56,   57,   58,   59,  -55,  -56,  -57,  -58,  -59]]],
+
+
+       [[[  60,   61,   62,   63,   64,  -60,  -61,  -62,  -63,  -64],
+         [  65,   66,   67,   68,   69,  -65,  -66,  -67,  -68,  -69],
+         [  70,   71,   72,   73,   74,  -70,  -71,  -72,  -73,  -74],
+         [  75,   76,   77,   78,   79,  -75,  -76,  -77,  -78,  -79]],
+
+        [[  80,   81,   82,   83,   84,  -80,  -81,  -82,  -83,  -84],
+         [  85,   86,   87,   88,   89,  -85,  -86,  -87,  -88,  -89],
+         [  90,   91,   92,   93,   94,  -90,  -91,  -92,  -93,  -94],
+         [  95,   96,   97,   98,   99,  -95,  -96,  -97,  -98,  -99]],
+
+        [[ 100,  101,  102,  103,  104, -100, -101, -102, -103, -104],
+         [ 105,  106,  107,  108,  109, -105, -106, -107, -108, -109],
+         [ 110,  111,  112,  113,  114, -110, -111, -112, -113, -114],
+         [ 115,  116,  117,  118,  119, -115, -116, -117, -118, -119]]]],
+      dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>아래와 같은 방법도 있긴하나 난 안할래</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(2, 3, 4, 10), dtype=int32, numpy=
+array([[[[   0,    1,    2,    3,    4,    0,   -1,   -2,   -3,   -4],
+         [   5,    6,    7,    8,    9,   -5,   -6,   -7,   -8,   -9],
+         [  10,   11,   12,   13,   14,  -10,  -11,  -12,  -13,  -14],
+         [  15,   16,   17,   18,   19,  -15,  -16,  -17,  -18,  -19]],
+
+        [[  20,   21,   22,   23,   24,  -20,  -21,  -22,  -23,  -24],
+         [  25,   26,   27,   28,   29,  -25,  -26,  -27,  -28,  -29],
+         [  30,   31,   32,   33,   34,  -30,  -31,  -32,  -33,  -34],
+         [  35,   36,   37,   38,   39,  -35,  -36,  -37,  -38,  -39]],
+
+        [[  40,   41,   42,   43,   44,  -40,  -41,  -42,  -43,  -44],
+         [  45,   46,   47,   48,   49,  -45,  -46,  -47,  -48,  -49],
+         [  50,   51,   52,   53,   54,  -50,  -51,  -52,  -53,  -54],
+         [  55,   56,   57,   58,   59,  -55,  -56,  -57,  -58,  -59]]],
+
+
+       [[[  60,   61,   62,   63,   64,  -60,  -61,  -62,  -63,  -64],
+         [  65,   66,   67,   68,   69,  -65,  -66,  -67,  -68,  -69],
+         [  70,   71,   72,   73,   74,  -70,  -71,  -72,  -73,  -74],
+         [  75,   76,   77,   78,   79,  -75,  -76,  -77,  -78,  -79]],
+
+        [[  80,   81,   82,   83,   84,  -80,  -81,  -82,  -83,  -84],
+         [  85,   86,   87,   88,   89,  -85,  -86,  -87,  -88,  -89],
+         [  90,   91,   92,   93,   94,  -90,  -91,  -92,  -93,  -94],
+         [  95,   96,   97,   98,   99,  -95,  -96,  -97,  -98,  -99]],
+
+        [[ 100,  101,  102,  103,  104, -100, -101, -102, -103, -104],
+         [ 105,  106,  107,  108,  109, -105, -106, -107, -108, -109],
+         [ 110,  111,  112,  113,  114, -110, -111, -112, -113, -114],
+         [ 115,  116,  117,  118,  119, -115, -116, -117, -118, -119]]]],
+      dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#52264;&#50896;&#51012;-&#54620;&#48264;-&#51460;&#50668;&#48372;&#51088;">&#52264;&#50896;&#51012; &#54620;&#48264; &#51460;&#50668;&#48372;&#51088;<a class="anchor-link" href="#&#52264;&#50896;&#51012;-&#54620;&#48264;-&#51460;&#50668;&#48372;&#51088;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(4,)</code> -&gt; <code>(8,)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">b</span><span class="o">=-</span><span class="n">a</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&lt;tf.Tensor: shape=(4,), dtype=int32, numpy=array([1, 2, 3, 4], dtype=int32)&gt;,
+ &lt;tf.Tensor: shape=(4,), dtype=int32, numpy=array([-1, -2, -3, -4], dtype=int32)&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(8,), dtype=int32, numpy=array([ 1,  2,  3,  4, -1, -2, -3, -4], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(4,)</code> -&gt; <code>(4,2)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 에러가 뜬다</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">InvalidArgumentError</span>                      Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-145-6f52ef50c654&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>tf<span class="ansi-blue-fg">.</span>concat<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>a<span class="ansi-blue-fg">,</span>b<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>axis<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/util/traceback_utils.py</span> in <span class="ansi-cyan-fg">error_handler</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    151</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    152</span>       filtered_tb <span class="ansi-blue-fg">=</span> _process_traceback_frames<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>__traceback__<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 153</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">raise</span> e<span class="ansi-blue-fg">.</span>with_traceback<span class="ansi-blue-fg">(</span>filtered_tb<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    154</span>     <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    155</span>       <span class="ansi-green-fg">del</span> filtered_tb
+
+<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/ops.py</span> in <span class="ansi-cyan-fg">raise_from_not_ok_status</span><span class="ansi-blue-fg">(e, name)</span>
+<span class="ansi-green-intense-fg ansi-bold">   7184</span> <span class="ansi-green-fg">def</span> raise_from_not_ok_status<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   7185</span>   e<span class="ansi-blue-fg">.</span>message <span class="ansi-blue-fg">+=</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34; name: &#34;</span> <span class="ansi-blue-fg">+</span> name <span class="ansi-green-fg">if</span> name <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">&#34;&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 7186</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">raise</span> core<span class="ansi-blue-fg">.</span>_status_to_exception<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>  <span class="ansi-red-fg"># pylint: disable=protected-access</span>
+<span class="ansi-green-intense-fg ansi-bold">   7187</span> 
+<span class="ansi-green-intense-fg ansi-bold">   7188</span> 
+
+<span class="ansi-red-fg">InvalidArgumentError</span>: ConcatOp : Expected concatenating dimensions in the range [-1, 1), but got 1 [Op:ConcatV2] name: concat</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="tf.stack">tf.stack<a class="anchor-link" href="#tf.stack"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(4,)</code> -&gt; <code>(4,2)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">b</span><span class="o">=-</span><span class="n">a</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&lt;tf.Tensor: shape=(4,), dtype=int32, numpy=array([1, 2, 3, 4], dtype=int32)&gt;,
+ &lt;tf.Tensor: shape=(4,), dtype=int32, numpy=array([-1, -2, -3, -4], dtype=int32)&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(4, 2), dtype=int32, numpy=
+array([[ 1, -1],
+       [ 2, -2],
+       [ 3, -3],
+       [ 4, -4]], dtype=int32)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="tf.einsum">tf.einsum<a class="anchor-link" href="#tf.einsum"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="tnp">tnp<a class="anchor-link" href="#tnp"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 텐서만들기가 너무 힘듬</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow.experimental.numpy</span> <span class="k">as</span> <span class="nn">tnp</span>
+<span class="n">tnp</span><span class="o">.</span><span class="n">experimental_enable_numpy_behavior</span><span class="p">()</span> <span class="c1">## tnf 를 numpy 처럼 사용할 수 있도록 해줌</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="tnp-&#49324;&#50857;&#48169;&#48277;-(&#48520;&#47564;&#54644;&#44208;&#48169;&#48277;)">tnp &#49324;&#50857;&#48169;&#48277; (&#48520;&#47564;&#54644;&#44208;&#48169;&#48277;)<a class="anchor-link" href="#tnp-&#49324;&#50857;&#48169;&#48277;-(&#48520;&#47564;&#54644;&#44208;&#48169;&#48277;)"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> <code>int</code> 와 <code>float</code> 을 더할 수 있음</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">tnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">])</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(3,), dtype=float64, numpy=array([2., 4., 6.])&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>심지어</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">tnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">])</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(3,), dtype=float64, numpy=array([2., 3., 4.])&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">])</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(3,), dtype=float64, numpy=array([2., 4., 6.])&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tnp</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensorflow.python.framework.ops.EagerTensor</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&lt;tf.Tensor: shape=(), dtype=int64, numpy=0&gt;,
+ &lt;tf.Tensor: shape=(), dtype=int64, numpy=3&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(9, 1), dtype=int64, numpy=
+array([[1],
+       [0],
+       [0],
+       [0],
+       [2],
+       [0],
+       [0],
+       [0],
+       [3]])&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#49440;&#50616;,-&#49440;&#50616;&#44256;&#44553;">&#49440;&#50616;, &#49440;&#50616;&#44256;&#44553;<a class="anchor-link" href="#&#49440;&#50616;,-&#49440;&#50616;&#44256;&#44553;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([-1.79271696, -0.17190837,  1.01536417,  0.10096996,  0.6384037 ])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tnp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;tf.Tensor: shape=(5,), dtype=float64, numpy=array([ 0.68371875, -0.77886642, -0.78283853, -1.91862598, -0.36602414])&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#53440;&#51077;">&#53440;&#51077;<a class="anchor-link" href="#&#53440;&#51077;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">tnp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensorflow.python.framework.ops.EagerTensor</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="tf.contant&#47196;-&#47564;&#46308;&#50612;&#46020;-&#47560;&#52824;-&#45336;&#54028;&#51060;&#51064;&#46319;-&#50416;&#45716;-&#44592;&#45733;&#46308;">tf.contant&#47196; &#47564;&#46308;&#50612;&#46020; &#47560;&#52824; &#45336;&#54028;&#51060;&#51064;&#46319; &#50416;&#45716; &#44592;&#45733;&#46308;<a class="anchor-link" href="#tf.contant&#47196;-&#47564;&#46308;&#50612;&#46020;-&#47560;&#52824;-&#45336;&#54028;&#51060;&#51064;&#46319;-&#50416;&#45716;-&#44592;&#45733;&#46308;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 묵시적 형변환이 가능해짐</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 메소드를 쓸 수 있음.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44536;&#47111;&#51648;&#47564;-np.array&#45716;-&#50500;&#45784;">&#44536;&#47111;&#51648;&#47564; np.array&#45716; &#50500;&#45784;<a class="anchor-link" href="#&#44536;&#47111;&#51648;&#47564;-np.array&#45716;-&#50500;&#45784;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>여전히 값을 바꾸는 것은 허용하지 않는다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> <span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">11</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-181-b909b2ec59d1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>a<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">11</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;tensorflow.python.framework.ops.EagerTensor&#39; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="tf.Variable">tf.Variable<a class="anchor-link" href="#tf.Variable"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#49440;&#50616;">&#49440;&#50616;<a class="anchor-link" href="#&#49440;&#50616;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#53440;&#51077;">&#53440;&#51077;<a class="anchor-link" href="#&#53440;&#51077;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51064;&#45937;&#49905;">&#51064;&#45937;&#49905;<a class="anchor-link" href="#&#51064;&#45937;&#49905;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="tf.Variable-$\to$-&#45336;&#54028;&#51060;">tf.Variable $\to$ &#45336;&#54028;&#51060;<a class="anchor-link" href="#tf.Variable-$\to$-&#45336;&#54028;&#51060;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="tf.Variable-&#46020;-&#48520;&#54200;&#54616;&#45796;.">tf.Variable &#46020; &#48520;&#54200;&#54616;&#45796;.<a class="anchor-link" href="#tf.Variable-&#46020;-&#48520;&#54200;&#54616;&#45796;."> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50672;&#49328;">&#50672;&#49328;<a class="anchor-link" href="#&#50672;&#49328;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54805;&#53468;&#48320;&#54872;">&#54805;&#53468;&#48320;&#54872;<a class="anchor-link" href="#&#54805;&#53468;&#48320;&#54872;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#49440;&#50616;&#44256;&#44553;">&#49440;&#50616;&#44256;&#44553;<a class="anchor-link" href="#&#49440;&#50616;&#44256;&#44553;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="tf.concat">tf.concat<a class="anchor-link" href="#tf.concat"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="tf.stack">tf.stack<a class="anchor-link" href="#tf.stack"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#49900;&#51648;&#50612;-tf.Variable()&#47196;-&#47564;&#46308;&#50612;&#51652;-&#50724;&#48652;&#51229;&#53944;&#45716;-tnp&#51032;-&#54952;&#44284;(&#51008;&#52509;)&#46020;-&#48155;&#51648;-&#47803;&#54632;">&#49900;&#51648;&#50612; tf.Variable()&#47196; &#47564;&#46308;&#50612;&#51652; &#50724;&#48652;&#51229;&#53944;&#45716; tnp&#51032; &#54952;&#44284;(&#51008;&#52509;)&#46020; &#48155;&#51648; &#47803;&#54632;<a class="anchor-link" href="#&#49900;&#51648;&#50612;-tf.Variable()&#47196;-&#47564;&#46308;&#50612;&#51652;-&#50724;&#48652;&#51229;&#53944;&#45716;-tnp&#51032;-&#54952;&#44284;(&#51008;&#52509;)&#46020;-&#48155;&#51648;-&#47803;&#54632;"> </a></h4>
+</div>
+</div>
+</div>
+</div>
+
+
+
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
         repo="gangcheol/big-data-analysis"
@@ -4262,9 +8160,11 @@ array([[1],
         crossorigin="anonymous"
         async>
 </script><a class="u-url" href="/big-data-analysis/python/2022/03/14/(2%EC%A3%BC%EC%B0%A8).html" hidden></a>
+</article> 
 </article>
+</div>
 
-      </div>
+
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/big-data-analysis/"></data>
 
@@ -4293,4 +8193,4 @@ array([[1],
 </footer>
 </body>
 
-</html>
+</html> 
