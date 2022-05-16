@@ -32,7 +32,7 @@ url:"https://gangcheol.github.io" # the base hostname & protocol for your site, 
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "/back_of_my_envelope" # the subpath of your site, e.g. "/blog".
+baseurl: "/big-data-analysis" # the subpath of your site, e.g. "/blog".
 # Github and twitter are optional:
 minima:
   social_links:
@@ -43,7 +43,7 @@ use_math: true
 # Set this to true to display the summary of your blog post under your title on the Home page.
 show_description: true
 # Set this to true to display image previews on home page, if they exist
-show_image: true
+show_image: false
 # Set this to true to turn on annotations with hypothes.is (https://web.hypothes.is/)
 annotations: false
 # Set this to true to display tags on each post
@@ -62,9 +62,11 @@ default_badges:
   github: true
   binder: true
   colab: true
+  deepnote : true
 # Escape HTML in post descriptions
 html_escape:
   description: false
+  
 # Everything below here should be left alone. Modifications may break fastpages
 future: true
 theme: minima
@@ -85,6 +87,7 @@ plugins:
 # For pagination to work, you cannot have index.md at the root of your repo, instead you must rename this file to index.html
 paginate: 15
 paginate_path: /page:num/
+
 remote_theme: jekyll/minima
 titles_from_headings:
   enabled:     true
